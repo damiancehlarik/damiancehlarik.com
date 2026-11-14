@@ -1,0 +1,16 @@
+---
+layout: base.njk
+pagination:
+  data: collections.temy_en
+  size: 1
+  alias: tema
+permalink: "/en/tema/{{ tema | slug2 }}/"
+eleventyComputed:
+  title: "{{ tema }}"
+---
+{% set T = i18n[lang] %}<div class="temy caps">
+  <a href="{{ zaklad }}/">{{ T.vsetky }}</a>
+  {% for t in collections["temy_" + lang] %}<a href="{{ zaklad }}/tema/{{ t | slug2 }}/" {% if t == tema %}class="on"{% endif %}>{{ t }}</a>{% endfor %}
+</div>
+{% set zoznam = collections["clanky_" + lang] | tematicke(tema) %}
+{% include "mriezka.njk" %}

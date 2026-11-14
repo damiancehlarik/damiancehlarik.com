@@ -2,14 +2,14 @@
 layout: base.njk
 domov: true
 ---
-<section class="predhovor">
-  <h2 class="caps">Predhovor</h2>
-  <p>{{ site.predhovor }}</p>
+{% set T = i18n[lang] %}<section class="predhovor">
+  <h2 class="caps">{{ T.predhovor_nadpis }}</h2>
+  <p>{{ T.predhovor }}</p>
 </section>
 {% include "nav.njk" %}
 <div class="temy caps">
-  <a href="/" class="on">Všetky témy</a>
-  {% for t in collections.temy %}<a href="/tema/{{ t | slug2 }}/">{{ t }}</a>{% endfor %}
+  <a href="{{ zaklad }}/" class="on">{{ T.vsetky }}</a>
+  {% for t in collections["temy_" + lang] %}<a href="{{ zaklad }}/tema/{{ t | slug2 }}/">{{ t }}</a>{% endfor %}
 </div>
-{% set zoznam = collections.clanky %}
+{% set zoznam = collections["clanky_" + lang] %}
 {% include "mriezka.njk" %}

@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="{{ site.jazyk }}">
+{% set T = i18n[lang] %}<!DOCTYPE html>
+<html lang="{{ lang }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% if title %}{{ title }} · {% endif %}{{ site.meno }}</title>
-<meta name="description" content="{{ perex or site.predhovor | truncate(160) }}">
+<meta name="description" content="{{ perex or T.predhovor | truncate(160) }}">
+<link rel="alternate" hreflang="sk" href="{{ site.url }}{{ page.url | prepnut('sk') }}">
+<link rel="alternate" hreflang="en" href="{{ site.url }}{{ page.url | prepnut('en') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
@@ -12,16 +14,22 @@
 </head>
 <body>
 <div class="wrap">
-  <header><a class="logo" href="/">{{ site.meno }}</a></header>
+  <header>
+    <a class="logo" href="{{ zaklad }}/">{{ site.meno }}</a>
+    <div class="jazyk caps" aria-label="Jazyk / Language">
+      <a href="{{ page.url | prepnut('sk') }}" hreflang="sk" lang="sk" {% if lang == "sk" %}class="on" aria-current="true"{% endif %}>SK</a>
+      <a href="{{ page.url | prepnut('en') }}" hreflang="en" lang="en" {% if lang == "en" %}class="on" aria-current="true"{% endif %}>EN</a>
+    </div>
+  </header>
   {% if not domov %}{% include "nav.njk" %}{% endif %}
   <main>
     {{ content | safe }}
   </main>
   <footer class="mono">
-    <div><h5>STAV</h5><ul><li>Táto stránka: <!--VELKOST--></li><li>Rozpočet: {{ site.rozpocet }} KB</li><li>Obrázky: 1-bit, duotón</li></ul></div>
-    <div><h5>ČÍTAŤ</h5><ul><li><a href="/">Články</a></li><li><a href="/tema/damian-works/">Damian Works</a></li></ul></div>
-    <div><h5>INFO</h5><ul><li><a href="/o-mne/">O mne</a></li><li><a href="/clanky/preco-je-tento-web-maly/">Kolofón</a></li></ul></div>
-    <div><h5>KONTAKT</h5><ul><li>damiancehlarik.com</li><li>Bratislava</li></ul></div>
+    <div><h5>{{ T.stav }}</h5><ul><li>{{ T.stranka }}: <!--VELKOST--></li><li>{{ T.rozpocet }}: {{ site.rozpocet }} KB</li><li>{{ T.obrazky }}</li></ul></div>
+    <div><h5>{{ T.citat }}</h5><ul><li><a href="{{ zaklad }}/">{{ T.clanky }}</a></li><li><a href="{{ zaklad }}/tema/damian-works/">{{ T.dw }}</a></li></ul></div>
+    <div><h5>{{ T.info }}</h5><ul><li><a href="{{ zaklad }}/o-mne/">{{ T.omne }}</a></li><li><a href="{{ zaklad }}/clanky/preco-je-tento-web-maly/">{{ T.kolofon }}</a></li></ul></div>
+    <div><h5>{{ T.kontakt }}</h5><ul><li>damiancehlarik.com</li><li>Bratislava</li></ul></div>
   </footer>
 </div>
 </body>

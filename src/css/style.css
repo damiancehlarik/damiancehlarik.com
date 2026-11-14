@@ -25,7 +25,13 @@ img { display: block; width: 100%; height: auto; }
 .mono { font-family: var(--mono); font-size: 13px; }
 
 /* meno */
-header { text-align: center; }
+header { text-align: center; position: relative; }
+
+/* prepínač jazyka */
+.jazyk { position: absolute; top: 10px; right: 0; display: flex; gap: 14px; font-size: 13px; }
+.jazyk a { color: var(--tlmene); }
+.jazyk a:hover, .jazyk a.on { color: var(--text); }
+.jazyk a.on { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
 .logo { font-size: 36px; line-height: 1; letter-spacing: .01em; font-kerning: normal; }
 .logo:hover { color: var(--text); }
 
@@ -94,6 +100,11 @@ footer a { color: var(--odkaz); }
   body { font-size: 19px; }
   .wrap { padding: 30px 20px 60px; }
   .logo { font-size: 27px; }
+  header { display: flex; flex-direction: column-reverse; align-items: center; gap: 14px; }
+  .jazyk { position: static; font-size: 12px; }
+  .temy { gap: 6px 18px; }
+  .karta img { margin-bottom: 16px; }
+  .mriezka { gap: 48px; margin-top: 40px; }
   .predhovor { margin-top: 70px; }
   .predhovor p { font-size: 24px; }
   .predhovor + nav { margin-top: 60px; }

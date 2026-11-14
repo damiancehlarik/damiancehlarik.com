@@ -1,16 +1,16 @@
 ---
 layout: base.njk
 ---
-<article class="clanok" data-num="{{ page.date | cislo }}">
+{% set T = i18n[lang] %}<article class="clanok" data-num="{{ page.date | cislo }}">
   <h1>{{ title }}</h1>
-  <div class="podtitul caps"><a href="/tema/{{ tema | slug2 }}/">{{ tema }}</a>, {% if miesto %}{{ miesto }}, {% endif %}{{ page.date | rok }}</div>
+  <div class="podtitul caps"><a href="{{ zaklad }}/tema/{{ tema | slug2 }}/">{{ tema }}</a>, {% if miesto %}{{ miesto }}, {% endif %}{{ page.date | rok }}</div>
   <p class="perex">{{ perex }}</p>
   <div class="telo">
     {{ content | safe }}
   </div>
   <!--priloha-->
   {% if kredity %}
-  <section class="kredity"><h2 class="caps">Spolupracovali</h2>
+  <section class="kredity"><h2 class="caps">{{ T.spolupracovali }}</h2>
     <dl>{% for k, v in kredity %}<div><dt>{{ k }}</dt><dd>{{ v }}</dd></div>{% endfor %}</dl>
   </section>
   {% endif %}

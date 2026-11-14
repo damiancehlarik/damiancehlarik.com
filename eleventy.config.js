@@ -21,15 +21,24 @@ function imageSize(file) {
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/img": "img", "src/css": "css", "src/CNAME": "CNAME" });
 
-  /* všetky články, najnovšie prvé */
-  eleventyConfig.addCollection("clanky", (api) =>
-    api.getFilteredByGlob("src/clanky/*.md").sort((a, b) => b.date - a.date));
+  /* články a témy pre každý jazyk: slovenčina v src/clanky, angličtina v src/en/clanky */
+  const glob = { sk: "src/clanky/*.md", en: "src/en/clanky/*.md" };
+  for (const [lang, g] of Object.entries(glob)) {
+    eleventyConfig.addCollection("clanky_" + lang, (api) =>
+      api.getFilteredByGlob(g).sort((a, b) => b.date - a.date));
+    eleventyConfig.addCollection("temy_" + lang, (api) => {
+      const t = new Set();
+      api.getFilteredByGlob(g).sort((a, b) => b.date - a.date).forEach((p) => p.data.tema && t.add(p.data.tema));
+      return [...t];
+    });
+  }
 
-  /* zoznam tém zo všetkých článkov */
-  eleventyConfig.addCollection("temy", (api) => {
-    const t = new Set();
-    api.getFilteredByGlob("src/clanky/*.md").forEach((p) => p.data.tema && t.add(p.data.tema));
-    return [...t];
+  /* adresa tej istej stránky v druhom jazyku */
+  eleventyConfig.addFilter("prepnut", (url, ciel) => {
+    const jeEn = url.startsWith("/en/");
+    const bez = jeEn ? url.slice(3) : url;
+    if (bez.startsWith("/tema/")) return ciel === "en" ? "/en/" : "/";
+    return ciel === "en" ? (jeEn ? url : "/en" + bez) : bez;
   });
 
   eleventyConfig.addFilter("slug2", (s) =>
@@ -65,7 +74,7 @@ export default function (eleventyConfig) {
       return `<div class="obr rad">${figs.map((f) => `<figure style="flex:${(f.w / f.h).toFixed(4)}">${f.html}</figure>`).join("")}</div>`;
     });
     if (caps.length)
-      html = html.replace("<!--priloha-->", `<section class="priloha"><h2 class="caps">Obrazová príloha</h2><ol>${caps.map((c) => `<li>${c}</li>`).join("")}</ol></section>`);
+      html = html.replace("<!--priloha-->", `<section class="priloha"><h2 class="caps">${html.includes('<html lang="en"') ? "Image appendix" : "Obrazová príloha"}</h2><ol>${caps.map((c) => `<li>${c}</li>`).join("")}</ol></section>`);
 
     /* veľkosť stránky: HTML + obrázky, ktoré načíta */
     let bytes = Buffer.byteLength(html);
