@@ -1,0 +1,15 @@
+---
+layout: base.njk
+domov: true
+---
+<section class="predhovor">
+  <h2 class="caps">Predhovor</h2>
+  <p>{{ site.predhovor }}</p>
+</section>
+{% include "nav.njk" %}
+<div class="temy caps">
+  <a href="/" class="on">Všetky témy</a>
+  {% for t in collections.temy %}<a href="/tema/{{ t | slug2 }}/">{{ t }}</a>{% endfor %}
+</div>
+{% set zoznam = collections.clanky %}
+{% include "mriezka.njk" %}

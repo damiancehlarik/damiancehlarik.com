@@ -1,0 +1,4 @@
+{
+  "layout": "clanok.njk",
+  "permalink": "/clanky/{{ page.fileSlug }}/"
+}
