@@ -1,0 +1,50 @@
+{
+  "skratky": {
+    "sk": {
+      "MIB": "Metropolitný inštitút Bratislavy",
+      "BADW": "Bratislava Design Week",
+      "VŠVU": "Vysoká škola výtvarných umení v Bratislave",
+      "ÚBOK": "Ústav bytové a oděvní kultury",
+      "SSES": "Stockholm School of Entrepreneurship",
+      "DAE": "Design Academy Eindhoven",
+      "AA": "Architectural Association",
+      "CSM": "Central Saint Martins",
+      "PoliMi": "Politecnico di Milano",
+      "ENSCI": "École nationale supérieure de création industrielle"
+    },
+    "en": {
+      "MIB": "Metropolitan Institute of Bratislava",
+      "BADW": "Bratislava Design Week",
+      "AFAD": "Academy of Fine Arts and Design in Bratislava",
+      "ÚBOK": "Institute of Housing and Clothing Culture",
+      "SSES": "Stockholm School of Entrepreneurship",
+      "DAE": "Design Academy Eindhoven",
+      "AA": "Architectural Association",
+      "CSM": "Central Saint Martins",
+      "PoliMi": "Politecnico di Milano",
+      "ENSCI": "École nationale supérieure de création industrielle"
+    }
+  },
+  "sk": {
+    "uvod": "Damián Cehlárik je dizajnér, kurátor a pedagóg, ktorého práca sa pohybuje medzi kritickým dizajnom a materiálnou kultúrou. Po štúdiu a práci v Holandsku sa vrátil na Slovensko s rozhodnutím skúmať miesto, kde žije, a ekonomické, krajinné, materiálne a normatívne sily, ktoré tu formujú dizajn.",
+    "odseky": [
+      { "nadpis": "Damian Works", "text": "Medzi pravidelných inštitucionálnych partnerov jeho ateliéru [[damian-works|Damian Works]] patrí MIB, s ktorým navrhuje projekty verejného priestoru. Pre súťaž o budúcnosť Zimného prístavu navrhol výstavy a ocenenia. V TU-BA, prvom centre architektúry na Slovensku, pripravil úvodnú výstavu Poznáš Bratislavu? a spolu s MIB ho mení na multifunkčný výstavný priestor." },
+      { "nadpis": "Pôvod", "text": "Pochádza z rodiny stolárov, ktorej remeslo sa dá doložiť až do roku 1920 a ktorej nelineárnu históriu formovali ekonomické zlomy regiónu. V pätnástich odišiel na drevársku školu študovať za stolára a konštruktéra nábytku, no začali ho tam nazývať pojmom, ktorý bol preňho nový: dizajnér. Dnes pôsobí ako (kreatívny) riaditeľ RC Nábytok a buduje lokálnu značku nábytku Space Object." },
+      { "nadpis": "Kurátorstvo", "text": "Kurátorstvu sa začal venovať z potreby zastúpiť slovenských autorov, ktorých predstavoval v Miláne, Berlíne a ďalších európskych mestách. Neskôr založil vlastný výstavný program a od roku 2024 je kurátorom BADW, kde pripravil výstavy Parasite 2.0 (2024) a Cinema Parentesi (2025). Druhá z nich presvedčila inštitúcie o potenciáli priestoru S-KLUB na Svoradovej ulici a priniesla financovanie na jeho rekonštrukciu. Naplnil sa tak zámer premeniť ho na galériu, ktorý ho sprevádzal desať rokov, počas celej existencie Damian Works." },
+      { "nadpis": "Pedagogika", "text": "Na VŠVU otvára v postgraduálnych seminároch témy ako [[more-than-human|more-than-human]], [[planetarna-komputacia|planetárna komputácia]] či [[hranicne-polohy|hraničné polohy dizajnu]]. Vedie bakalárske a diplomové práce v odboroch dizajn, textil a úžitkové umenie, zatiaľ čo pre [[vizualna-komunikacia|vizuálnu komunikáciu]] zastrešuje celý teoretický kurz, od prehľadových prednášok po špecializácie. Na škole, kde pôvodne študoval priemyselný dizajn, dnes pôsobí na plný úväzok ako odborný asistent. Táto pozícia ho privádza na ďalšie školy v Európe aj v regióne, napríklad osobne do Kyjeva, Ľvova a Užhorodu." },
+      { "nadpis": "Výskum", "text": "V doktorandskom výskume sa venuje [[normativne-sily|normatívnym silám dizajnu]]: normám, tabuľkám a typovým systémom, ktoré formujú každodenný život viac než ikony dizajnu, no zostávajú takmer neviditeľné. Skúma ich na príklade ÚBOK, ktorý v rokoch 1959 až 1990 navrhoval rámce bývania v Československu. V pripravovanom projekte [[krajina-mesta|Krajina mesta]] chce otázku navrhovaného prostredia rozšíriť za hranice bytu, do mesta a regiónu." },
+      { "nadpis": "Vzdelanie", "text": "Počas bakalárskeho štúdia pôsobil v neziskovom sektore. V roku 2018 študoval na Konstfack v Štokholme, kde štúdium prepojil so SSES, a stážoval v architektonických a dizajnérskych ateliéroch. Magisterské štúdium sociálneho dizajnu ukončil na DAE projektom Housing Society, za ktorý získal vyznamenanie cum laude, nomináciu na Gijs Bakker Award a Národnú cenu za dizajn. Diplomový projekt sa stal východiskom jeho ďalšej práce a dal meno platforme Society, pod ktorou dnes rozvíja kurátorské aj výskumné projekty. Absolvoval krátke kurzy na AA a CSM v Londýne a počas doktorátu na PoliMi a ENSCI v Paríži." }
+    ]
+  },
+  "en": {
+    "uvod": "Damián Cehlárik is a designer, curator and educator whose work moves between critical design and material culture. After studying and working in the Netherlands, he returned to Slovakia having decided to investigate the place where he lives and the economic, landscape, material and normative forces that shape design here.",
+    "odseky": [
+      { "nadpis": "Damian Works", "text": "The regular institutional partners of his studio [[damian-works|Damian Works]] include MIB, with whom he designs public space projects. For the competition on the future of Zimný prístav, the city's winter harbour, he designed exhibitions and awards. At TU-BA, the first centre for architecture in Slovakia, he curated the opening exhibition Do You Know Bratislava? and, together with MIB, is turning the centre into a multifunctional exhibition space." },
+      { "nadpis": "Origin", "text": "He comes from a family of carpenters whose craft can be traced back to 1920 and whose non-linear history was shaped by the economic ruptures of the region. At fifteen he left home for a woodworking school to train as a carpenter and furniture engineer, but there people began to call him by a term that was new to him: designer. Today he is (creative) director of RC Nábytok and is building the local furniture brand Space Object." },
+      { "nadpis": "Curating", "text": "He began curating out of a need to represent Slovak authors, whom he presented in Milan, Berlin and other European cities. He later founded his own exhibition programme, and since 2024 he has been a curator of BADW, where he organised the exhibitions Parasite 2.0 (2024) and Cinema Parentesi (2025). The latter convinced institutions of the potential of the S-KLUB space on Svoradova Street and secured funding for its reconstruction. It fulfilled an intention to turn the space into a gallery that had accompanied him for ten years, throughout the entire existence of Damian Works." },
+      { "nadpis": "Teaching", "text": "At AFAD he opens topics such as [[more-than-human|more-than-human]], [[planetarna-komputacia|planetary computation]] and [[hranicne-polohy|the borderlines of design]] in postgraduate seminars. He supervises bachelor's and master's theses in design, textile and applied arts, while for [[vizualna-komunikacia|visual communication]] he leads the entire theory course, from survey lectures to specialisations. At the school where he originally studied industrial design, he now works full-time as an assistant professor. The position takes him to other schools in Europe and in the region, including in person to Kyiv, Lviv and Uzhhorod." },
+      { "nadpis": "Research", "text": "In his doctoral research he studies [[normativne-sily|the normative forces of design]]: norms, tables and type systems that shape everyday life more than design icons do, yet remain almost invisible. He examines them through ÚBOK, which from 1959 to 1990 designed the frameworks of housing in Czechoslovakia. In the forthcoming project [[krajina-mesta|Landscape of the City]] he extends the question of the designed environment beyond the flat, into the city and the region." },
+      { "nadpis": "Education", "text": "During his bachelor's studies he worked in the non-profit sector. In 2018 he studied at Konstfack in Stockholm, where he connected his studies with SSES, and interned at architecture and design studios. He completed his master's in social design at DAE with the project Housing Society, which earned him a cum laude distinction, a nomination for the Gijs Bakker Award and the Slovak National Design Award. The graduation project became the starting point of his further work and gave its name to the platform Society, under which he now develops curatorial and research projects. He took short courses at the AA and CSM in London and, during his doctorate, at PoliMi and at ENSCI in Paris." }
+    ]
+  }
+}

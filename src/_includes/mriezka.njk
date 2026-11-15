@@ -1,11 +1,10 @@
-<ul class="mriezka">
+{% set T = i18n[lang] %}{% if zoznam | length %}<ul class="mriezka">
 {% for p in zoznam %}
   <li class="karta"><a href="{{ p.url }}">
-    {% if p.data.obrazok %}<img src="{{ p.data.obrazok | nahlad }}" alt="" loading="lazy">{% endif %}
+    {% if p.data.obrazok %}<img src="{{ p.data.obrazok }}" alt="" width="626" height="380" loading="lazy">{% endif %}
     <div class="tema caps">{{ p.data.tema }}</div>
     <h2>{{ p.data.title }}</h2>
     <p>{{ p.data.perex }}</p>
-    <div class="datum">{{ p.date | rok }}</div>
   </a></li>
 {% endfor %}
-</ul>
+</ul>{% else %}<p class="prazdne">{{ T.prazdne }}</p>{% endif %}

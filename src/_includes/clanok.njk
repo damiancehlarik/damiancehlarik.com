@@ -1,17 +1,12 @@
 ---
 layout: base.njk
 ---
-{% set T = i18n[lang] %}<article class="clanok" data-num="{{ page.date | cislo }}">
+{% set T = i18n[lang] %}<article class="clanok">
   <h1>{{ title }}</h1>
-  <div class="podtitul caps"><a href="{{ zaklad }}/tema/{{ tema | slug2 }}/">{{ tema }}</a>, {% if miesto %}{{ miesto }}, {% endif %}{{ page.date | rok }}</div>
+  <div class="podtitul caps">{{ tema }}</div>
   <p class="perex">{{ perex }}</p>
+  {% if obrazok %}<figure class="hlavny"><img src="{{ obrazok }}" alt="" width="626" height="380"><figcaption>{{ popis or T.zastupny }}</figcaption></figure>{% endif %}
   <div class="telo">
     {{ content | safe }}
   </div>
-  <!--priloha-->
-  {% if kredity %}
-  <section class="kredity"><h2 class="caps">{{ T.spolupracovali }}</h2>
-    <dl>{% for k, v in kredity %}<div><dt>{{ k }}</dt><dd>{{ v }}</dd></div>{% endfor %}</dl>
-  </section>
-  {% endif %}
 </article>

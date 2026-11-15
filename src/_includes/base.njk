@@ -16,20 +16,20 @@
 <div class="wrap">
   <header>
     <a class="logo" href="{{ zaklad }}/">{{ site.meno }}</a>
-    <div class="jazyk caps" aria-label="Jazyk / Language">
+    <div class="jazyk caps" aria-label="{{ T.jazyk }}">
       <a href="{{ page.url | prepnut('sk') }}" hreflang="sk" lang="sk" {% if lang == "sk" %}class="on" aria-current="true"{% endif %}>SK</a>
+      <span aria-hidden="true">/</span>
       <a href="{{ page.url | prepnut('en') }}" hreflang="en" lang="en" {% if lang == "en" %}class="on" aria-current="true"{% endif %}>EN</a>
     </div>
   </header>
-  {% if not domov %}{% include "nav.njk" %}{% endif %}
+  {% if not domov and not bezNavigacie %}{% include "nav.njk" %}{% endif %}
   <main>
     {{ content | safe }}
   </main>
   <footer class="mono">
-    <div><h5>{{ T.stav }}</h5><ul><li>{{ T.stranka }}: <!--VELKOST--></li><li>{{ T.rozpocet }}: {{ site.rozpocet }} KB</li><li>{{ T.obrazky }}</li></ul></div>
-    <div><h5>{{ T.citat }}</h5><ul><li><a href="{{ zaklad }}/">{{ T.clanky }}</a></li><li><a href="{{ zaklad }}/tema/damian-works/">{{ T.dw }}</a></li></ul></div>
-    <div><h5>{{ T.info }}</h5><ul><li><a href="{{ zaklad }}/o-mne/">{{ T.omne }}</a></li><li><a href="{{ zaklad }}/clanky/preco-je-tento-web-maly/">{{ T.kolofon }}</a></li></ul></div>
-    <div><h5>{{ T.kontakt }}</h5><ul><li>damiancehlarik.com</li><li>Bratislava</li></ul></div>
+    <p>{{ T.vaha_1 }} <!--VAHA-->, {{ T.vaha_2 }} <!--CO2--> g CO₂e. <a href="{{ zaklad }}/preco/">{{ T.preco }}</a></p>
+    <p>{{ T.kredit }} <a href="{{ zaklad }}/clanky/damian-works/">Damian Works</a></p>
+    <p class="kontakt">{% if site.instagram %}<a href="{{ site.instagram }}">{{ T.instagram }}</a>{% else %}<span>{{ T.instagram }}</span>{% endif %}<a href="mailto:{{ site.email }}">{{ T.email }}</a></p>
   </footer>
 </div>
 </body>

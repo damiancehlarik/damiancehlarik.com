@@ -1,16 +1,16 @@
 ---
 layout: base.njk
+domov: true
 pagination:
-  data: collections.temy_sk
+  data: filtre
   size: 1
-  alias: tema
-permalink: "/tema/{{ tema | slug2 }}/"
+  alias: filter
+permalink: "/tema/{{ filter.key }}/"
 eleventyComputed:
-  title: "{{ tema }}"
+  title: "{{ filter.sk }}"
+  aktivny: "{{ filter.key }}"
 ---
-{% set T = i18n[lang] %}<div class="temy caps">
-  <a href="{{ zaklad }}/">{{ T.vsetky }}</a>
-  {% for t in collections["temy_" + lang] %}<a href="{{ zaklad }}/tema/{{ t | slug2 }}/" {% if t == tema %}class="on"{% endif %}>{{ t }}</a>{% endfor %}
-</div>
-{% set zoznam = collections["clanky_" + lang] | tematicke(tema) %}
+{% include "nav.njk" %}
+{% include "filtre.njk" %}
+{% set zoznam = collections["clanky_" + lang] | sFiltrom(filter.key) %}
 {% include "mriezka.njk" %}

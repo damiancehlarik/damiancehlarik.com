@@ -1,87 +1,64 @@
 import fs from "node:fs";
 import path from "node:path";
+import zlib from "node:zlib";
 
-/* Rozmery obrázka (PNG aj JPG) bez ďalších knižníc */
-function imageSize(file) {
-  try {
-    const b = fs.readFileSync(file);
-    if (b.readUInt32BE(0) === 0x89504e47) return [b.readUInt32BE(16), b.readUInt32BE(20)];
-    if (b[0] === 0xff && b[1] === 0xd8) {
-      let i = 2;
-      while (i < b.length) {
-        const m = b[i + 1], len = b.readUInt16BE(i + 2);
-        if (m >= 0xc0 && m <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(m)) return [b.readUInt16BE(i + 7), b.readUInt16BE(i + 5)];
-        i += 2 + len;
-      }
-    }
-  } catch (e) {}
-  return [3, 2];
-}
+/* Model Sustainable Web Design v4: 0,30 kWh na GB (prevádzka 0,194 + výroba zariadení 0,106),
+   svetový priemer 494 g CO2e na kWh. Výsledok je odhad na jedno zobrazenie stránky. */
+const KWH_NA_GB = 0.30;
+const G_NA_KWH = 494;
 
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/img": "img", "src/css": "css", "src/CNAME": "CNAME" });
 
-  /* články a témy pre každý jazyk: slovenčina v src/clanky, angličtina v src/en/clanky */
+  /* články pre každý jazyk, zoradené podľa poľa poradie */
   const glob = { sk: "src/clanky/*.md", en: "src/en/clanky/*.md" };
   for (const [lang, g] of Object.entries(glob)) {
     eleventyConfig.addCollection("clanky_" + lang, (api) =>
-      api.getFilteredByGlob(g).sort((a, b) => b.date - a.date));
-    eleventyConfig.addCollection("temy_" + lang, (api) => {
-      const t = new Set();
-      api.getFilteredByGlob(g).sort((a, b) => b.date - a.date).forEach((p) => p.data.tema && t.add(p.data.tema));
-      return [...t];
-    });
+      api.getFilteredByGlob(g).sort((a, b) => (a.data.poradie || 99) - (b.data.poradie || 99)));
   }
 
   /* adresa tej istej stránky v druhom jazyku */
   eleventyConfig.addFilter("prepnut", (url, ciel) => {
-    const jeEn = url.startsWith("/en/");
-    const bez = jeEn ? url.slice(3) : url;
-    if (bez.startsWith("/tema/")) return ciel === "en" ? "/en/" : "/";
+    const jeEn = url.startsWith("/en/") || url === "/en";
+    const bez = jeEn ? url.slice(3) || "/" : url;
     return ciel === "en" ? (jeEn ? url : "/en" + bez) : bez;
   });
 
-  eleventyConfig.addFilter("slug2", (s) =>
-    String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, ""));
-  eleventyConfig.addFilter("nahlad", (src) => String(src).replace(/^\/img\//, "/img/nahlad/"));
-  eleventyConfig.addFilter("rok", (d) => new Date(d).getFullYear());
-  eleventyConfig.addFilter("cislo", (d) => { const x = new Date(d); return `${x.getFullYear() % 100}.${x.getMonth() + 1}`; });
-  eleventyConfig.addFilter("tematicke", (list, tema) => list.filter((p) => p.data.tema === tema));
+  /* články s daným filtrom (režim alebo sila) */
+  eleventyConfig.addFilter("sFiltrom", (list, key) =>
+    (list || []).filter((p) => p.data.rezim === key || (p.data.sily || []).includes(key)));
 
-  /* Obrázky v článkoch:
-     - odsek, v ktorom sú len obrázky, sa zmení na riadok obrázkov
-     - 1 obrázok na šírku = cez celú šírku, 1 na výšku = užší a v strede
-     - 2 až 3 obrázky = vedľa seba, zarovnané na rovnakú výšku
-     - popis = alt text, číslovanie a obrazová príloha sa doplnia samé */
-  eleventyConfig.addTransform("obrazky", function (html) {
-    if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) return html;
-    const num = (html.match(/data-num="([^"]+)"/) || [])[1];
-    const caps = [];
-    let k = 0;
-    html = html.replace(/<p>((?:\s*<img [^>]+>\s*)+)<\/p>/g, (m, inner) => {
-      const imgs = [...inner.matchAll(/<img src="([^"]+)" alt="([^"]*)"[^>]*>/g)];
-      const figs = imgs.map(([, src, alt]) => {
-        const [w, h] = imageSize(path.join("src", src.replace(/^\//, "")));
-        k++;
-        const c = num ? `№ ${num}.${k}` : "";
-        caps.push(`${c} ${alt}`.trim());
-        return { w, h, html: `<img src="${src}" alt="${alt}" width="${w}" height="${h}" loading="lazy"><figcaption>${c}${alt ? "&nbsp; " + alt : ""}</figcaption>` };
-      });
-      if (figs.length === 1) {
-        const f = figs[0], cls = f.h > f.w ? "obr jeden vyska" : "obr jeden";
-        return `<figure class="${cls}">${f.html}</figure>`;
-      }
-      return `<div class="obr rad">${figs.map((f) => `<figure style="flex:${(f.w / f.h).toFixed(4)}">${f.html}</figure>`).join("")}</div>`;
-    });
-    if (caps.length)
-      html = html.replace("<!--priloha-->", `<section class="priloha"><h2 class="caps">${html.includes('<html lang="en"') ? "Image appendix" : "Obrazová príloha"}</h2><ol>${caps.map((c) => `<li>${c}</li>`).join("")}</ol></section>`);
-
-    /* veľkosť stránky: HTML + obrázky, ktoré načíta */
-    let bytes = Buffer.byteLength(html);
-    for (const [, src] of html.matchAll(/<img src="(\/img\/[^"]+)"/g)) {
-      try { bytes += fs.statSync(path.join("src", src)).size; } catch (e) {}
+  /* bio: [[slug|text]] je odkaz, ak článok existuje, inak obyčajný text; skratky dostanú <abbr> */
+  eleventyConfig.addFilter("bio", (text, clanky, zaklad, skratky) => {
+    const sl = new Set((clanky || []).map((p) => p.page.fileSlug));
+    let out = String(text).replace(/\[\[([^|\]]+)\|([^\]]+)\]\]/g, (m, slug, label) =>
+      sl.has(slug) ? `<a href="${zaklad}/clanky/${slug}/">${label}</a>` : label);
+    for (const [k, v] of Object.entries(skratky || {})) {
+      const re = new RegExp(`(^|[\\s(])(${k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})(?=[\\s,.;:)?]|$)`);
+      out = out.replace(re, `$1<abbr title="${v}">$2</abbr>`);
     }
-    return html.replace("<!--VELKOST-->", (bytes / 1024).toFixed(1).replace(".", ",") + " KB");
+    return out;
+  });
+
+  /* váha stránky a odhad emisií, vpísané do päty pri zostavení */
+  let cssGz = null;
+  eleventyConfig.addTransform("vaha", function (html) {
+    if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) return html;
+    if (!html.includes("<!--VAHA-->")) return html;
+    if (cssGz === null) {
+      try { cssGz = zlib.gzipSync(fs.readFileSync("src/css/style.css")).length; } catch (e) { cssGz = 0; }
+    }
+    const site = JSON.parse(fs.readFileSync("src/_data/site.json", "utf8"));
+    let bytes = cssGz + (site.pismo_bajty || 0);
+    const obr = new Set();
+    for (const [, src] of html.matchAll(/<img [^>]*src="(\/img\/[^"]+)"/g)) obr.add(src);
+    for (const src of obr) { try { bytes += fs.statSync(path.join("src", src)).size; } catch (e) {} }
+    const odhad = (h) => h.replace("<!--VAHA-->", Math.round(bytes / 1024) + " KB")
+      .replace("<!--CO2-->", (bytes / 1024 ** 3 * KWH_NA_GB * G_NA_KWH).toFixed(2).replace(".", html.includes('<html lang="en"') ? "." : ","));
+    /* HTML sa prenáša komprimované; počíta sa dvakrát, aby čísla v päte boli zahrnuté */
+    let out = odhad(html);
+    bytes += zlib.gzipSync(out).length;
+    return odhad(html);
   });
 
   return { dir: { input: "src", output: "_site" }, markdownTemplateEngine: "njk", htmlTemplateEngine: "njk" };

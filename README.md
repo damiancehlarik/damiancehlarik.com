@@ -5,12 +5,19 @@ Malý statický web. Články sú textové súbory, obrázky sú 1-bitové duot�
 ## Čo je kde
 
 ```
-src/clanky/        články, jeden súbor = jeden článok (Markdown)
+src/clanky/        slovenské články, jeden súbor = jeden článok (Markdown)
+src/en/clanky/     anglické články (rovnaký názov súboru = preklad)
+src/_data/bio.json   bio na stránke Info (SK/EN), [[slug|text]] = odkaz na článok
+src/_data/cv.json    kategórie Výberu aktivít
+src/_data/filtre.json  filtre na Indexe (sily a režimy)
+src/_data/i18n.json  texty rozhrania a predhovor
+src/preco.md       skrytá stránka Prečo je tento web malý (odkaz z päty)
+archiv/            staré články, nezverejňujú sa
 src/img/           obrázky (vyrába ich skript duoton.py)
-src/_data/site.json  meno, predhovor, rozpočet stránky
+src/_data/site.json  meno, e-mail, Instagram, odkazy, veľkosť písma pre výpočet váhy
 src/css/style.css  celý vzhľad: písmo, farby, rozloženie
 src/_includes/     šablóny (hlavička, článok, mriežka)
-src/o-mne.md       stránka O mne
+src/info.njk       stránka Info
 foto/              originálne fotky (na GitHub sa nenahrávajú)
 scripts/duoton.py  z fotky urobí duotón
 NOVY-CLANOK.md     vzor nového článku

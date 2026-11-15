@@ -7,9 +7,6 @@ domov: true
   <p>{{ T.predhovor }}</p>
 </section>
 {% include "nav.njk" %}
-<div class="temy caps">
-  <a href="{{ zaklad }}/" class="on">{{ T.vsetky }}</a>
-  {% for t in collections["temy_" + lang] %}<a href="{{ zaklad }}/tema/{{ t | slug2 }}/">{{ t }}</a>{% endfor %}
-</div>
+{% include "filtre.njk" %}
 {% set zoznam = collections["clanky_" + lang] %}
 {% include "mriezka.njk" %}

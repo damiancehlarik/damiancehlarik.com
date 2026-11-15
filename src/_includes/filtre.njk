@@ -1,0 +1,5 @@
+{% set vsetky = collections["clanky_" + lang] %}<div class="filtre caps">
+  {% for os in ["sily", "rezimy"] %}<div class="os">
+    {% for f in filtre %}{% if f.os == os %}{% set n = vsetky | sFiltrom(f.key) | length %}{% if n %}<a href="{{ zaklad }}/tema/{{ f.key }}/" {% if aktivny == f.key %}class="on" aria-current="page"{% endif %}>{{ f[lang] }}</a>{% else %}<span>{{ f[lang] }}</span>{% endif %}{% endif %}{% endfor %}
+  </div>{% endfor %}
+</div>

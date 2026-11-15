@@ -5,7 +5,7 @@ date: 2026-03-01
 perex: Notes from doctoral research on the norms of the Institute of Housing and Clothing Culture (ÚBOK).
 obrazok: /img/zastupny-ubok.png
 kredity:
-  Institution: VŠVU, Department of Theory and History of Art
+  Institution: AFAD, Department of Theory and History of Art
   Supervisor: Zdenko Kolesár
 ---
 

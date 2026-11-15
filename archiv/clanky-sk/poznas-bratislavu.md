@@ -7,7 +7,7 @@ perex: Architektúra priestoru TU-BA a jeho prvá výstava. Mesto v mapách, gra
 obrazok: /img/zastupny-tuba.png
 kredity:
   Klient: Metropolitný inštitút Bratislavy
-  Architektúra, výstava: Damián Cehlárik
+  Architektúra, dizajn výstavy: Damian Works
 ---
 
 Text na doplnenie: priestor.

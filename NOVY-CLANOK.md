@@ -1,24 +1,19 @@
 ---
 title: Názov článku
-tema: Mesto a rieka
-date: 2026-12-01
-miesto: Bratislava
-perex: Jedna alebo dve vety, ktoré sa ukážu v mriežke na úvode a ako úvod článku.
-obrazok: /img/nazov-fotky.png
-kredity:
-  Koncept, dizajn: Damián Cehlárik
-  Klient: Názov klienta
-  Foto: Meno fotografa
+tema: Akadémia
+perex: Jedna veta, začína žánrom (Seminár o..., PhD výskum..., Projekt o...).
+rezim: akademia
+sily: []
+poradie: 9
+obrazok: /img/nazov-obrazka.png
 ---
 
-Prvý odsek. Píš normálne, odseky oddeľuj prázdnym riadkom.
-
-![Popis, ktorý sa ukáže pod obrázkom](/img/nazov-fotky.png)
+Prvý odsek. Píš normálne v tretej osobe, odseky oddeľuj prázdnym riadkom.
 
 Ďalší odsek. Odkaz sa píše takto: [text odkazu](/clanky/iny-clanok/).
 
-![Na výšku](/img/fotka-1.png) ![Na šírku](/img/fotka-2.png)
-
-## Nadpis sekcie (ak treba)
-
-Posledný odsek.
+Poznámky:
+- rezim: akademia, society, space-object alebo damian-works
+- sily: ľubovoľne z [ekonomia, krajina, material, normy]
+- poradie určuje miesto na Indexe
+- anglický preklad ulož pod rovnakým názvom do src/en/clanky/

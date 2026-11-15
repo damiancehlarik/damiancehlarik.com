@@ -1,7 +1,15 @@
 {
   "meno": "Damián Cehlárik",
   "url": "https://damiancehlarik.com",
-  "jazyk": "sk",
-  "predhovor": "Damián Cehlárik je dizajnér, kurátor a pedagóg z Bratislavy. Pracuje so špekulatívnym a kritickým dizajnom ako praktik aj ako učiteľ a skúma, ako sa v strednej a východnej Európe stretávajú mesto, bývanie a to, čo je viac než ľudské. Projekty svojho ateliéru Damian Works nepublikuje ako galériu, ale ako texty.",
-  "rozpocet": 300
+  "email": "mail@damian.works",
+  "instagram": "",
+  "orcid": "https://orcid.org/0009-0006-5646-7912",
+  "society": "https://society.sk",
+  "vsvu": {
+    "sk": "https://www.vsvu.sk/sk/o-nas/kontakt/zamestnanci/damian-cehlarik/",
+    "en": "https://www.vsvu.sk/en/about-us/contacts/employees/damian-cehlarik/"
+  },
+  "spaceobject": "",
+  "rcnabytok": "",
+  "pismo_bajty": 220100
 }

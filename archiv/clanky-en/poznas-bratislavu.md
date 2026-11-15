@@ -7,7 +7,7 @@ perex: The architecture of the TU-BA space and its first exhibition. The city in
 obrazok: /img/zastupny-tuba.png
 kredity:
   Client: Metropolitan Institute of Bratislava (MIB)
-  Architecture, exhibition: Damián Cehlárik
+  Architecture, exhibition design: Damian Works
 ---
 
 Text to follow: the space.

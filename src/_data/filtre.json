@@ -1,0 +1,10 @@
+[
+  { "key": "ekonomia", "os": "sily", "sk": "Ekonómia", "en": "Economy" },
+  { "key": "krajina", "os": "sily", "sk": "Krajina", "en": "Landscape" },
+  { "key": "material", "os": "sily", "sk": "Materiál", "en": "Material" },
+  { "key": "normy", "os": "sily", "sk": "Normy", "en": "Norms" },
+  { "key": "akademia", "os": "rezimy", "sk": "Akadémia", "en": "Academy" },
+  { "key": "society", "os": "rezimy", "sk": "Society", "en": "Society" },
+  { "key": "space-object", "os": "rezimy", "sk": "Space Object", "en": "Space Object" },
+  { "key": "damian-works", "os": "rezimy", "sk": "Damian Works", "en": "Damian Works" }
+]
