@@ -7,6 +7,10 @@
 <meta name="description" content="{{ popis }}">
 <meta name="author" content="{{ site.meno }}">
 {% if aktivny %}<meta name="robots" content="noindex, follow">{% endif %}
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="{{ adresa }}">
 <link rel="alternate" hreflang="sk" href="{{ site.url }}{{ page.url | prepnut('sk') }}">
 <link rel="alternate" hreflang="en" href="{{ site.url }}{{ page.url | prepnut('en') }}">
@@ -37,7 +41,7 @@
       <a href="{{ page.url | prepnut('en') }}" hreflang="en" lang="en" {% if lang == "en" %}class="on" aria-current="true"{% endif %}>EN</a>
     </div>
   </header>
-  {% if not domov and not bezNavigacie %}{% include "nav.njk" %}{% endif %}
+  {% include "nav.njk" %}
   <main>
     {{ content | safe }}
   </main>

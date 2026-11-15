@@ -41,11 +41,11 @@ header { display: flex; flex-direction: column; align-items: center; }
 .jazyk a.on { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
 
 /* navigácia */
-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 38px; margin: 46px 0 0; }
+nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 38px; margin: 34px 0 0; }
 nav a { color: var(--odkaz); }
 nav a:hover { color: var(--text); }
 nav a.on { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
-.predhovor + nav { margin-top: 110px; }
+.predhovor + .filtre { margin-top: 110px; }
 
 /* predhovor */
 .predhovor { max-width: 960px; margin: 120px auto 0; }
@@ -83,10 +83,9 @@ nav a.on { text-decoration: underline; text-underline-offset: 5px; text-decorati
 .telo h2 { max-width: 760px; margin: 70px auto 20px; font-weight: 400; font-size: 15px; text-transform: uppercase; letter-spacing: .14em; }
 
 /* info */
-.odkazy { display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 46px 0 0; font-size: 13px; }
+.odkazy { display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 70px 0 0; font-size: 13px; }
 .odkazy .rad { display: flex; justify-content: center; }
 .odkazy a, .odkazy span { width: 140px; text-align: center; white-space: nowrap; color: var(--tlmene); }
-.odkazy .kontakt a, .odkazy .kontakt span { color: var(--odkaz); }
 .odkazy span { opacity: .7; }
 .odkazy a:hover { color: var(--text); }
 .info { max-width: 720px; margin: 100px auto 0; }
@@ -126,10 +125,10 @@ footer .kontakt span { color: var(--tlmene); }
   .wrap { padding: 30px 20px 50px; }
   .logo { font-size: 27px; }
   .jazyk { font-size: 12px; }
-  nav { gap: 4px 20px; margin-top: 30px; }
+  nav { gap: 4px 20px; margin-top: 24px; }
   .predhovor { margin-top: 70px; }
   .predhovor p { font-size: 24px; }
-  .predhovor + nav { margin-top: 60px; }
+  .predhovor + .filtre { margin-top: 60px; }
   .filtre .os { gap: 2px 16px; }
   .mriezka { grid-template-columns: 1fr; gap: 48px; margin-top: 40px; }
   .karta img { margin-bottom: 16px; }

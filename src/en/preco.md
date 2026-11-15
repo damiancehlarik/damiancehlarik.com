@@ -22,4 +22,4 @@ In The Stack, Benjamin Bratton describes computation as layers that reshape the 
 
 Weight and carbon are calculated by the site build every time it is published. Emissions follow the Sustainable Web Design Model v4: about 0.30 kWh per gigabyte transferred and a global average of 494 g CO₂e per kWh. It is an estimate, not a measurement. Today the largest part of the weight is not the images but the typeface Newsreader, which is downloaded on every page. That too belongs to the case study: the website shows its own compromises.
 
-The website was designed and developed by the studio Damian Works in dialogue with the language model Claude. The code is public. Like the studio's other work, it does not emerge as the gesture of a single author but as a post-authorial process whose traces can be followed.
+The website was designed and developed by the studio Damian Works. The code is public. Like the studio's other work, it does not emerge as the gesture of a single author but as a post-authorial process whose traces can be followed.

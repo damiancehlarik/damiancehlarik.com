@@ -10,7 +10,6 @@ eleventyComputed:
   title: "{{ filter.sk }}"
   aktivny: "{{ filter.key }}"
 ---
-{% include "nav.njk" %}
 {% include "filtre.njk" %}
 {% set zoznam = collections["clanky_" + lang] | sFiltrom(filter.key) %}
 {% include "mriezka.njk" %}

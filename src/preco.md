@@ -22,4 +22,4 @@ Benjamin Bratton v knihe The Stack opisuje výpočtovú techniku ako vrstvy, kto
 
 Váhu a uhlík počíta zostavenie webu pri každom zverejnení. Emisie vychádzajú z modelu Sustainable Web Design v4: asi 0,30 kWh na prenesený gigabajt a svetový priemer 494 g CO₂e na kWh. Je to odhad, nie meranie. Najväčšiu časť váhy dnes netvoria obrázky, ale písmo Newsreader, ktoré sa sťahuje na každej stránke. Aj to patrí k prípadovej štúdii: web ukazuje aj vlastné kompromisy.
 
-Web navrhol a vyvinul ateliér Damian Works v dialógu s jazykovým modelom Claude. Kód je verejný. Rovnako ako ostatná práca ateliéru nevzniká ako gesto jedného autora, ale ako postautorský proces, ktorého stopy sa dajú dohľadať.
+Web navrhol a vyvinul ateliér Damian Works. Kód je verejný. Rovnako ako ostatná práca ateliéru nevzniká ako gesto jedného autora, ale ako postautorský proces, ktorého stopy sa dajú dohľadať.

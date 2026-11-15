@@ -1,12 +1,11 @@
 ---
 layout: base.njk
 title: Info
-bezNavigacie: true
 permalink: /info/
 ---
 {% set T = i18n[lang] %}{% set B = bio[lang] %}{% set clanky = collections["clanky_" + lang] %}
 <div class="odkazy caps">
-  <div class="rad kontakt">
+  <div class="rad">
     <a href="mailto:{{ site.email }}">E-mail</a>
     {% if site.instagram %}<a href="{{ site.instagram }}">Instagram</a>{% else %}<span>Instagram</span>{% endif %}
     <a href="{{ site.orcid }}">ORCID</a>
@@ -25,7 +24,7 @@ permalink: /info/
   <h1>Info</h1>
   <figure class="portret">
     <img src="/img/portret.png" alt="Damián Cehlárik" width="840" height="1052">
-    <figcaption>{{ T.foto }}: Ricardo Raspa</figcaption>
+    <figcaption>{{ T.foto }}: Ricardo Raspa, {{ T.duoton }}</figcaption>
   </figure>
   <div class="bio">
     <p class="uvod">{{ B.uvod | bio(clanky, zaklad, bio.skratky[lang]) | safe }}</p>
