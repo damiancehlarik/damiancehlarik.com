@@ -1,0 +1,19 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- set strany = ["/", "/info/", "/preco/"] %}
+{%- for p in collections.clanky_sk %}{% set strany = (strany.push(p.url), strany) %}{% endfor %}
+{%- for u in strany %}
+{%- for l in ["sk", "en"] %}
+  <url>
+    <loc>{{ site.url }}{{ u | prepnut(l) }}</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="{{ site.url }}{{ u | prepnut('sk') }}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ u | prepnut('en') }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ u | prepnut('sk') }}"/>
+  </url>
+{%- endfor %}
+{%- endfor %}
+</urlset>

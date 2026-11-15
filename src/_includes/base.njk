@@ -3,11 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% if title %}{{ title }} · {% endif %}{{ site.meno }}</title>
-<meta name="description" content="{{ perex or T.predhovor | truncate(160) }}">
+{% set popis = (perex or T.predhovor) | striptags | truncate(158) %}{% set adresa = site.url + page.url %}{% set obr = site.url + (obrazok or "/img/portret.png") %}<title>{% if title %}{{ title }} · {% endif %}{{ site.meno }}</title>
+<meta name="description" content="{{ popis }}">
+<meta name="author" content="{{ site.meno }}">
+{% if aktivny %}<meta name="robots" content="noindex, follow">{% endif %}
+<link rel="canonical" href="{{ adresa }}">
 <link rel="alternate" hreflang="sk" href="{{ site.url }}{{ page.url | prepnut('sk') }}">
 <link rel="alternate" hreflang="en" href="{{ site.url }}{{ page.url | prepnut('en') }}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url | prepnut('sk') }}">
+<meta property="og:type" content="{% if perex and not domov %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.meno }}">
+<meta property="og:title" content="{{ title or site.meno }}">
+<meta property="og:description" content="{{ popis }}">
+<meta property="og:url" content="{{ adresa }}">
+<meta property="og:image" content="{{ obr }}">
+<meta property="og:locale" content="{% if lang == 'en' %}en_GB{% else %}sk_SK{% endif %}">
+<meta property="og:locale:alternate" content="{% if lang == 'en' %}sk_SK{% else %}en_GB{% endif %}">
+<meta name="twitter:card" content="summary_large_image">
+{% if domov or page.url == zaklad + "/info/" %}<script type="application/ld+json">{{ { "@context": "https://schema.org", "@type": "Person", "name": site.meno, "url": site.url + zaklad + "/", "image": site.url + "/img/portret.png", "jobTitle": ("Designer, curator and educator" if lang == "en" else "Dizajnér, kurátor a pedagóg"), "description": T.predhovor, "email": "mailto:" + site.email, "worksFor": [{ "@type": "Organization", "name": "Damian Works" }, { "@type": "CollegeOrUniversity", "name": "Vysoká škola výtvarných umení v Bratislave", "url": "https://www.vsvu.sk" }], "alumniOf": [{ "@type": "CollegeOrUniversity", "name": "Design Academy Eindhoven" }, { "@type": "CollegeOrUniversity", "name": "Vysoká škola výtvarných umení v Bratislave" }], "address": { "@type": "PostalAddress", "addressLocality": "Bratislava", "addressCountry": "SK" }, "sameAs": [site.orcid, site.society] } | dump | safe }}</script>
+{% elif perex %}<script type="application/ld+json">{{ { "@context": "https://schema.org", "@type": "Article", "headline": title, "description": perex, "inLanguage": lang, "image": obr, "url": adresa, "author": { "@type": "Person", "name": site.meno, "url": site.url + "/" }, "publisher": { "@type": "Organization", "name": "Damian Works" } } | dump | safe }}</script>
+{% endif %}<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
