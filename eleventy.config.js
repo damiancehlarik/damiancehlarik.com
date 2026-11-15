@@ -35,7 +35,7 @@ export default function (eleventyConfig) {
       sl.has(slug) ? `<a href="${zaklad}/clanky/${slug}/">${label}</a>` : label);
     for (const [k, v] of Object.entries(skratky || {})) {
       const re = new RegExp(`(^|[\\s(])(${k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})(?=[\\s,.;:)?]|$)`);
-      out = out.replace(re, `$1<abbr title="${v}">$2</abbr>`);
+      out = out.replace(re, `$1<abbr data-plne="${v}" aria-label="${k}, ${v}" tabindex="0">$2</abbr>`);
     }
     return out;
   });
