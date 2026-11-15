@@ -20,7 +20,8 @@
     "instagram": "Instagram",
     "presmerovanie": "Stránka sa presunula na",
     "jazyk": "Jazyk",
-    "sukromie": "Súkromie"
+    "sukromie": "Súkromie",
+    "cookies": "a neukladá žiadne cookies"
   },
   "en": {
     "index": "Index",
@@ -43,6 +44,7 @@
     "instagram": "Instagram",
     "presmerovanie": "This page has moved to",
     "jazyk": "Language",
-    "sukromie": "Privacy"
+    "sukromie": "Privacy",
+    "cookies": "and stores no cookies"
   }
 }

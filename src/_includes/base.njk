@@ -44,7 +44,7 @@
     {{ content | safe }}
   </main>
   <footer class="mono">
-    <p>{{ T.vaha_1 }} <!--VAHA-->, {{ T.vaha_2 }} <!--CO2--> g CO₂e. <a href="{{ zaklad }}/preco/">{{ T.preco }}</a></p>
+    <p>{{ T.vaha_1 }} <!--VAHA-->, {{ T.vaha_2 }} <!--CO2--> g CO₂e {{ T.cookies }}. <a href="{{ zaklad }}/preco/">{{ T.preco }}</a></p>
     <p>{{ T.kredit }} <a href="{{ zaklad }}/clanky/damian-works/">Damian Works</a></p>
     <p class="kontakt">{% if site.instagram %}<a href="{{ site.instagram }}">{{ T.instagram }}</a>{% else %}<span>{{ T.instagram }}</span>{% endif %}<a href="mailto:{{ site.email }}">{{ T.email }}</a><a href="{{ zaklad }}/sukromie/">{{ T.sukromie }}</a></p>
   </footer>
