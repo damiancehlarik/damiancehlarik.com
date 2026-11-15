@@ -1,6 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import zlib from "node:zlib";
+import crypto from "node:crypto";
+const require_hash = (buf) => crypto.createHash("md5").update(buf).digest("hex").slice(0, 8);
 
 /* Model Sustainable Web Design v4: 0,30 kWh na GB (prevádzka 0,194 + výroba zariadení 0,106),
    svetový priemer 494 g CO2e na kWh. Výsledok je odhad na jedno zobrazenie stránky. */
@@ -22,6 +24,11 @@ export default function (eleventyConfig) {
     const jeEn = url.startsWith("/en/") || url === "/en";
     const bez = jeEn ? url.slice(3) || "/" : url;
     return ciel === "en" ? (jeEn ? url : "/en" + bez) : bez;
+  });
+
+  /* verzia štýlu podľa obsahu súboru, aby prehliadač po zmene nenačítal starý štýl z pamäte */
+  eleventyConfig.addGlobalData("cssVerzia", () => {
+    try { return require_hash(fs.readFileSync("src/css/style.css")); } catch (e) { return "1"; }
   });
 
   /* články s daným filtrom (režim alebo sila) */
