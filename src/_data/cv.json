@@ -1,5 +1,330 @@
 {
-  "sk": ["Projekty", "Výstavy a kurátorstvo", "Výučba a prednášky", "Výskum", "Ocenenia", "Vzdelanie", "Texty a publikácie"],
-  "en": ["Projects", "Exhibitions and Curating", "Teaching and Lectures", "Research", "Awards", "Education", "Texts and Publications"],
-  "polozky": {}
+  "sk": [
+    "Projekty",
+    "Výstavy a kurátorstvo",
+    "Výučba a prednášky",
+    "Výskum",
+    "Ocenenia",
+    "Vzdelanie",
+    "Texty a publikácie"
+  ],
+  "en": [
+    "Projects",
+    "Exhibitions and Curating",
+    "Teaching and Lectures",
+    "Research",
+    "Awards",
+    "Education",
+    "Texts and Publications"
+  ],
+  "polozky": {
+    "Projekty": [
+      {
+        "rok": "2026",
+        "text": "Zimný prístav, výstavy a ocenenia pre súťaž o budúcnosť prístavu (MIB, Verejné prístavy)"
+      },
+      {
+        "rok": "2026",
+        "text": "Sad Janka Kráľa, prvky verejného priestoru (MIB)"
+      },
+      {
+        "rok": "2025",
+        "text": "TU-BA, architektúra a mobiliár prvého centra architektúry na Slovensku (MIB)"
+      },
+      {
+        "rok": "",
+        "text": "Space Object, lokálna značka nábytku"
+      },
+      {
+        "rok": "",
+        "text": "RC Nábytok, (kreatívne) vedenie"
+      },
+      {
+        "rok": "2016",
+        "text": "Založenie ateliéru [[damian-works|Damian Works]]"
+      }
+    ],
+    "Výstavy a kurátorstvo": [
+      {
+        "rok": "2026",
+        "text": "[[skola-spekulacie|Škola špekulácie]], letná škola, Bratislava Design Week"
+      },
+      {
+        "rok": "2025",
+        "text": "Cinema Parentesi, Bratislava Design Week, S-KLUB, Svoradova"
+      },
+      {
+        "rok": "2025",
+        "text": "Poznáš Bratislavu? Mesto v mapách, grafoch a číslach, úvodná výstava TU-BA"
+      },
+      {
+        "rok": "2024",
+        "text": "Parasite 2.0, Bratislava Design Week"
+      },
+      {
+        "rok": "od 2024",
+        "text": "Kurátor Bratislava Design Week"
+      },
+      {
+        "rok": "2022",
+        "text": "Housing Society, Bratislava Design Week, kurátorský výber, Galéria mesta Bratislavy"
+      },
+      {
+        "rok": "2022",
+        "text": "Housing Society, Dutch Design Week, Graduation Show, Design Academy Eindhoven"
+      },
+      {
+        "rok": "2021",
+        "text": "The End, projekcia, Spazio Maiocchi, Il Pianeta, Terraforma Festival, Miláno"
+      },
+      {
+        "rok": "2021",
+        "text": "The End, projekcia, ALCOVA, Milan Design Week"
+      }
+    ],
+    "Výučba a prednášky": [
+      {
+        "rok": "2026",
+        "text": "[[more-than-human|More than Human]], postgraduálny seminár, VŠVU"
+      },
+      {
+        "rok": "",
+        "text": "[[planetarna-komputacia|Planetárna komputácia]], postgraduálny seminár, VŠVU"
+      },
+      {
+        "rok": "",
+        "text": "[[hranicne-polohy|Hraničné polohy dizajnu]], postgraduálny seminár, VŠVU"
+      },
+      {
+        "rok": "",
+        "text": "[[vizualna-komunikacia|Dejiny komunikácie]], prehľadový kurz pre katedru vizuálnej komunikácie, VŠVU"
+      },
+      {
+        "rok": "",
+        "text": "Vedenie bakalárskych a diplomových prác v odboroch dizajn, textil a úžitkové umenie, VŠVU"
+      },
+      {
+        "rok": "",
+        "text": "Odborný asistent, Katedra teórie a dejín umenia, VŠVU"
+      },
+      {
+        "rok": "",
+        "text": "Prednášky v Kyjeve, Ľvove a Užhorode"
+      }
+    ],
+    "Výskum": [
+      {
+        "rok": "2026",
+        "text": "Budovanie doktorandskej školy na VŠVU"
+      },
+      {
+        "rok": "",
+        "text": "[[normativne-sily|Byt nie je nikdy hotový]], dizertácia o normách bývania ÚBOK, VŠVU"
+      },
+      {
+        "rok": "",
+        "text": "[[krajina-mesta|Krajina mesta]], pripravovaný výskumný program (Society)"
+      },
+      {
+        "rok": "2020–2022",
+        "text": "Housing Society, diplomový výskum, Design Academy Eindhoven"
+      }
+    ],
+    "Ocenenia": [
+      {
+        "rok": "2023",
+        "text": "Národná cena za dizajn, kategória Nové horizonty, Housing Society"
+      },
+      {
+        "rok": "2022",
+        "text": "Nominácia na Gijs Bakker Award, Design Academy Eindhoven, Housing Society"
+      },
+      {
+        "rok": "2022",
+        "text": "Cum laude, Design Academy Eindhoven"
+      }
+    ],
+    "Vzdelanie": [
+      {
+        "rok": "",
+        "text": "PhD, Vedy o umení a kultúre, VŠVU; kurzy na Politecnico di Milano a ENSCI v Paríži"
+      },
+      {
+        "rok": "2020–2022",
+        "text": "M.A. Social Design, Design Academy Eindhoven, cum laude"
+      },
+      {
+        "rok": "2021",
+        "text": "Architectural Association Visiting School, The Possibility of an Island, Londýn"
+      },
+      {
+        "rok": "2018–2019",
+        "text": "Konstfack, Štokholm, výmenný pobyt, Stockholm School of Entrepreneurship"
+      },
+      {
+        "rok": "2016–2020",
+        "text": "Bc. Dizajn, VŠVU, vedľajšie štúdium filozofia a dejiny umenia"
+      }
+    ],
+    "Texty a publikácie": [
+      {
+        "rok": "2022",
+        "text": "Housing Society v médiách: NRC, Metropolis M, AD, Eindhovens Dagblad"
+      }
+    ],
+    "Projects": [
+      {
+        "rok": "2026",
+        "text": "Zimný prístav, exhibitions and awards for the competition on the future of the winter harbour (MIB, Verejné prístavy)"
+      },
+      {
+        "rok": "2026",
+        "text": "Sad Janka Kráľa park, public space elements (MIB)"
+      },
+      {
+        "rok": "2025",
+        "text": "TU-BA, architecture and furniture of the first centre for architecture in Slovakia (MIB)"
+      },
+      {
+        "rok": "",
+        "text": "Space Object, local furniture brand"
+      },
+      {
+        "rok": "",
+        "text": "RC Nábytok, (creative) direction"
+      },
+      {
+        "rok": "2016",
+        "text": "Founded the studio [[damian-works|Damian Works]]"
+      }
+    ],
+    "Exhibitions and Curating": [
+      {
+        "rok": "2026",
+        "text": "[[skola-spekulacie|School of Speculation]], summer school, Bratislava Design Week"
+      },
+      {
+        "rok": "2025",
+        "text": "Cinema Parentesi, Bratislava Design Week, S-KLUB, Svoradova Street"
+      },
+      {
+        "rok": "2025",
+        "text": "Do You Know Bratislava? The City in Maps, Graphs and Numbers, opening exhibition of TU-BA"
+      },
+      {
+        "rok": "2024",
+        "text": "Parasite 2.0, Bratislava Design Week"
+      },
+      {
+        "rok": "since 2024",
+        "text": "Curator, Bratislava Design Week"
+      },
+      {
+        "rok": "2022",
+        "text": "Housing Society, Bratislava Design Week, Curated Selection, Bratislava City Gallery"
+      },
+      {
+        "rok": "2022",
+        "text": "Housing Society, Dutch Design Week, Graduation Show, Design Academy Eindhoven"
+      },
+      {
+        "rok": "2021",
+        "text": "The End, screening, Spazio Maiocchi, Il Pianeta, Terraforma Festival, Milan"
+      },
+      {
+        "rok": "2021",
+        "text": "The End, screening, ALCOVA, Milan Design Week"
+      }
+    ],
+    "Teaching and Lectures": [
+      {
+        "rok": "2026",
+        "text": "[[more-than-human|More than Human]], postgraduate seminar, AFAD"
+      },
+      {
+        "rok": "",
+        "text": "[[planetarna-komputacia|Planetary Computation]], postgraduate seminar, AFAD"
+      },
+      {
+        "rok": "",
+        "text": "[[hranicne-polohy|Borderlines of Design]], postgraduate seminar, AFAD"
+      },
+      {
+        "rok": "",
+        "text": "[[vizualna-komunikacia|History of Communication]], survey course for the Department of Visual Communication, AFAD"
+      },
+      {
+        "rok": "",
+        "text": "Supervision of bachelor's and master's theses in design, textile and applied arts, AFAD"
+      },
+      {
+        "rok": "",
+        "text": "Assistant professor, Department of Theory and History of Art, AFAD"
+      },
+      {
+        "rok": "",
+        "text": "Lectures in Kyiv, Lviv and Uzhhorod"
+      }
+    ],
+    "Research": [
+      {
+        "rok": "2026",
+        "text": "Building the new doctoral school at AFAD"
+      },
+      {
+        "rok": "",
+        "text": "[[normativne-sily|A Flat Is Never Finished]], doctoral research on ÚBOK housing norms, AFAD"
+      },
+      {
+        "rok": "",
+        "text": "[[krajina-mesta|Landscape of the City]], research programme in preparation (Society)"
+      },
+      {
+        "rok": "2020–2022",
+        "text": "Housing Society, graduation research, Design Academy Eindhoven"
+      }
+    ],
+    "Awards": [
+      {
+        "rok": "2023",
+        "text": "Slovak National Design Award, New Horizons, Housing Society"
+      },
+      {
+        "rok": "2022",
+        "text": "Gijs Bakker Award nomination, Design Academy Eindhoven, Housing Society"
+      },
+      {
+        "rok": "2022",
+        "text": "Cum laude, Design Academy Eindhoven"
+      }
+    ],
+    "Education": [
+      {
+        "rok": "",
+        "text": "PhD, Art and Culture Studies, AFAD; courses at Politecnico di Milano and ENSCI Paris"
+      },
+      {
+        "rok": "2020–2022",
+        "text": "MA Social Design, Design Academy Eindhoven, cum laude"
+      },
+      {
+        "rok": "2021",
+        "text": "Architectural Association Visiting School, The Possibility of an Island, London"
+      },
+      {
+        "rok": "2018–2019",
+        "text": "Konstfack, Stockholm, exchange, with Stockholm School of Entrepreneurship"
+      },
+      {
+        "rok": "2016–2020",
+        "text": "BA Design, AFAD, minor in philosophy and art history"
+      }
+    ],
+    "Texts and Publications": [
+      {
+        "rok": "2022",
+        "text": "Housing Society in the press: NRC, Metropolis M, AD, Eindhovens Dagblad"
+      }
+    ]
+  }
 }
