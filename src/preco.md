@@ -14,7 +14,7 @@ Jussi Parikka v knihe A Geology of Media sleduje médiá späť k zemi: ku kovom
 
 Obrázky sú 1-bitové duotóny. Každý bod je buď farba, alebo papier, a odtiene vznikajú len rozptýlením bodov podľa algoritmu Floyda a Steinberga z roku 1976. Hito Steyerl v eseji In Defense of the Poor Image obhajuje chudobný obraz, ktorý vymieňa kvalitu za dostupnosť a pohyb. Tu je chudoba obrazu zámerná a viditeľná: zrno priznáva, že obraz prešiel médiom. Rovnako pracuje solárny web Low←Tech Magazine Krisa De Deckera, ktorý je pre tento web hlavným vzorom. Táto stránka nemá obrázok vôbec.
 
-Web je statický. Stránky vznikajú raz, pri zostavení, a server ich len posiela ďalej. Nie je tu databáza, sledovanie návštevníkov ani skript, ktorý by bežal v prehliadači. Aj rozbaľovanie životopisu robí samotné HTML. Claude Shannon v roku 1948 oddelil informáciu od významu. Tento web sa pokúša o opak: aby čo najviac prenesených bitov nieslo význam, nie réžiu.
+Web je statický. Stránky vznikajú raz, pri zostavení, a server ich len posiela ďalej. Nie je tu databáza, sledovanie návštevníkov, cookies ani skript, ktorý by bežal v prehliadači. Aj rozbaľovanie životopisu robí samotné HTML. Claude Shannon v roku 1948 oddelil informáciu od významu. Tento web sa pokúša o opak: aby čo najviac prenesených bitov nieslo význam, nie réžiu.
 
 Wendy Hui Kyong Chun v knihe Updating to Remain the Same opisuje nové médiá ako návyk, neustále aktualizácie, ktoré nás držia na mieste. Malý web je pokus z tohto návyku vystúpiť. Nemá feed ani upozornenia a Index je mapa tém, nie časová os.
 

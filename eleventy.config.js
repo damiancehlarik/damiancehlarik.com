@@ -10,7 +10,7 @@ const KWH_NA_GB = 0.30;
 const G_NA_KWH = 494;
 
 export default function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({ "src/img": "img", "src/css": "css", "src/CNAME": "CNAME", "src/favicon.ico": "favicon.ico" });
+  eleventyConfig.addPassthroughCopy({ "src/img": "img", "src/css": "css", "src/CNAME": "CNAME", "src/favicon.ico": "favicon.ico", "src/fonts": "fonts" });
 
   /* články pre každý jazyk, zoradené podľa poľa poradie */
   const glob = { sk: "src/clanky/*.md", en: "src/en/clanky/*.md" };

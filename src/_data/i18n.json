@@ -19,7 +19,8 @@
     "email": "E-mail",
     "instagram": "Instagram",
     "presmerovanie": "Stránka sa presunula na",
-    "jazyk": "Jazyk"
+    "jazyk": "Jazyk",
+    "sukromie": "Súkromie"
   },
   "en": {
     "index": "Index",
@@ -41,6 +42,7 @@
     "email": "E-mail",
     "instagram": "Instagram",
     "presmerovanie": "This page has moved to",
-    "jazyk": "Language"
+    "jazyk": "Language",
+    "sukromie": "Privacy"
   }
 }

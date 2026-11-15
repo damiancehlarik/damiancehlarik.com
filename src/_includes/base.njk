@@ -26,9 +26,7 @@
 <meta name="twitter:card" content="summary_large_image">
 {% if domov or page.url == zaklad + "/info/" %}<script type="application/ld+json">{{ { "@context": "https://schema.org", "@type": "Person", "name": site.meno, "url": site.url + zaklad + "/", "image": site.url + "/img/portret.png", "jobTitle": ("Designer, curator and educator" if lang == "en" else "Dizajnér, kurátor a pedagóg"), "description": T.predhovor, "email": "mailto:" + site.email, "worksFor": [{ "@type": "Organization", "name": "Damian Works" }, { "@type": "CollegeOrUniversity", "name": "Vysoká škola výtvarných umení v Bratislave", "url": "https://www.vsvu.sk" }], "alumniOf": [{ "@type": "CollegeOrUniversity", "name": "Design Academy Eindhoven" }, { "@type": "CollegeOrUniversity", "name": "Vysoká škola výtvarných umení v Bratislave" }], "address": { "@type": "PostalAddress", "addressLocality": "Bratislava", "addressCountry": "SK" }, "sameAs": [site.orcid, site.society] } | dump | safe }}</script>
 {% elif perex %}<script type="application/ld+json">{{ { "@context": "https://schema.org", "@type": "Article", "headline": title, "description": perex, "inLanguage": lang, "image": obr, "url": adresa, "author": { "@type": "Person", "name": site.meno, "url": site.url + "/" }, "publisher": { "@type": "Organization", "name": "Damian Works" } } | dump | safe }}</script>
-{% endif %}<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+{% endif %}<link rel="preload" href="/fonts/newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/style.css?v={{ cssVerzia }}">
 </head>
 <body>
@@ -48,7 +46,7 @@
   <footer class="mono">
     <p>{{ T.vaha_1 }} <!--VAHA-->, {{ T.vaha_2 }} <!--CO2--> g CO₂e. <a href="{{ zaklad }}/preco/">{{ T.preco }}</a></p>
     <p>{{ T.kredit }} <a href="{{ zaklad }}/clanky/damian-works/">Damian Works</a></p>
-    <p class="kontakt">{% if site.instagram %}<a href="{{ site.instagram }}">{{ T.instagram }}</a>{% else %}<span>{{ T.instagram }}</span>{% endif %}<a href="mailto:{{ site.email }}">{{ T.email }}</a></p>
+    <p class="kontakt">{% if site.instagram %}<a href="{{ site.instagram }}">{{ T.instagram }}</a>{% else %}<span>{{ T.instagram }}</span>{% endif %}<a href="mailto:{{ site.email }}">{{ T.email }}</a><a href="{{ zaklad }}/sukromie/">{{ T.sukromie }}</a></p>
   </footer>
 </div>
 </body>
