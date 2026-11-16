@@ -26,8 +26,7 @@
 <meta name="twitter:card" content="summary_large_image">
 {% if domov or page.url == zaklad + "/info/" %}<script type="application/ld+json">{{ { "@context": "https://schema.org", "@type": "Person", "name": site.meno, "url": site.url + zaklad + "/", "image": site.url + "/img/portret.png", "jobTitle": ("Designer, curator and educator" if lang == "en" else "Dizajnér, kurátor a pedagóg"), "description": T.predhovor, "email": "mailto:" + site.email, "worksFor": [{ "@type": "Organization", "name": "Damian Works" }, { "@type": "CollegeOrUniversity", "name": "Vysoká škola výtvarných umení v Bratislave", "url": "https://www.vsvu.sk" }], "alumniOf": [{ "@type": "CollegeOrUniversity", "name": "Design Academy Eindhoven" }, { "@type": "CollegeOrUniversity", "name": "Vysoká škola výtvarných umení v Bratislave" }], "address": { "@type": "PostalAddress", "addressLocality": "Bratislava", "addressCountry": "SK" }, "sameAs": [site.orcid, site.society] } | dump | safe }}</script>
 {% elif perex %}<script type="application/ld+json">{{ { "@context": "https://schema.org", "@type": "Article", "headline": title, "description": perex, "inLanguage": lang, "image": obr, "url": adresa, "author": { "@type": "Person", "name": site.meno, "url": site.url + "/" }, "publisher": { "@type": "Organization", "name": "Damian Works" } } | dump | safe }}</script>
-{% endif %}<link rel="preload" href="/fonts/newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/style.css?v={{ cssVerzia }}">
+{% endif %}<link rel="stylesheet" href="/css/style.css?v={{ cssVerzia }}">
 </head>
 <body>
 <div class="wrap">

@@ -1,6 +1,6 @@
 ---
 layout: clanok.njk
-title: Privacy
+title: Privacy and Copyright
 tema: Legal information
 perex: This website collects no personal data and uses no cookies or visitor tracking.
 permalink: /en/sukromie/
@@ -12,7 +12,7 @@ The website damiancehlarik.com is run by Damián Cehlárik, Bratislava, Slovakia
 
 ## What the website does not collect
 
-The website uses no cookies, no visitor analytics, no advertising or tracking scripts, no forms, no comments and no embedded social media. The typeface is stored on this website itself, so viewing a page does not connect your browser to any third-party server.
+The website uses no cookies, no visitor analytics, no advertising or tracking scripts, no forms, no comments and no embedded social media. The website uses a system typeface that is already on your device, so viewing a page does not connect your browser to any third-party server.
 
 ## Hosting
 
@@ -29,6 +29,10 @@ The controller uses Google Search Console, which shows only aggregated data on h
 ## Links to other websites
 
 The website links to, for example, Instagram, ORCID, AFAD and Society. Once you follow a link, the privacy policy of that website applies.
+
+## Copyright
+
+Texts, images and the design of the website are © Damián Cehlárik unless stated otherwise. Photographs belong to their authors as credited; the portrait on the Info page is by Ricardo Raspa. You may quote short excerpts with attribution and a link to the website. For any other use, please write to [mail@damian.works](mailto:mail@damian.works). The typefaces Georgia (Microsoft) and Noto Serif (Google) are not distributed with the website; they are displayed from the visitor's device.
 
 ## Your rights
 

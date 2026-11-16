@@ -1,6 +1,6 @@
 ---
 layout: clanok.njk
-title: Ochrana súkromia
+title: Ochrana súkromia a autorské práva
 tema: Právne informácie
 perex: Tento web nezbiera osobné údaje, nepoužíva cookies ani sledovanie návštevnosti.
 permalink: /sukromie/
@@ -12,7 +12,7 @@ Prevádzkovateľom webu damiancehlarik.com je Damián Cehlárik, Bratislava, Slo
 
 ## Čo web nezbiera
 
-Web nepoužíva cookies, analytiku návštevnosti, reklamné ani sledovacie skripty, formuláre, komentáre ani vložené prvky sociálnych sietí. Písmo je uložené priamo na tomto webe, takže pri zobrazení stránky sa váš prehliadač nepripája k serverom tretích strán.
+Web nepoužíva cookies, analytiku návštevnosti, reklamné ani sledovacie skripty, formuláre, komentáre ani vložené prvky sociálnych sietí. Web používa systémové písmo, ktoré už je vo vašom zariadení, takže pri zobrazení stránky sa váš prehliadač nepripája k serverom tretích strán.
 
 ## Hosting
 
@@ -29,6 +29,10 @@ Prevádzkovateľ používa Google Search Console, ktorá ukazuje len súhrnné �
 ## Odkazy na iné weby
 
 Web odkazuje napríklad na Instagram, ORCID, VŠVU alebo Society. Po kliknutí platia zásady ochrany súkromia daných webov.
+
+## Autorské práva
+
+Texty, obrázky a dizajn webu sú © Damián Cehlárik, ak nie je uvedené inak. Fotografie patria ich autorom podľa uvedených kreditov, portrét na stránke Info je od Ricarda Raspu. Krátke úryvky môžete citovať s uvedením zdroja a odkazom na web. Na iné použitie sa prosím ozvite na [mail@damian.works](mailto:mail@damian.works). Písmo Georgia (Microsoft) ani Noto Serif (Google) sa s webom nešíri, zobrazuje sa zo zariadenia návštevníka.
 
 ## Vaše práva
 

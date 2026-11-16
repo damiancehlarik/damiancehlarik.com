@@ -10,7 +10,7 @@ const KWH_NA_GB = 0.30;
 const G_NA_KWH = 494;
 
 export default function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({ "src/img": "img", "src/css": "css", "src/CNAME": "CNAME", "src/favicon.ico": "favicon.ico", "src/fonts": "fonts" });
+  eleventyConfig.addPassthroughCopy({ "src/img": "img", "src/css": "css", "src/CNAME": "CNAME", "src/favicon.ico": "favicon.ico" });
 
   /* články pre každý jazyk, zoradené podľa poľa poradie */
   const glob = { sk: "src/clanky/*.md", en: "src/en/clanky/*.md" };
@@ -61,7 +61,7 @@ export default function (eleventyConfig) {
     for (const [, src] of html.matchAll(/<img [^>]*src="(\/img\/[^"]+)"/g)) obr.add(src);
     for (const src of obr) { try { bytes += fs.statSync(path.join("src", src)).size; } catch (e) {} }
     const odhad = (h) => h.replace("<!--VAHA-->", Math.round(bytes / 1024) + " KB")
-      .replace("<!--CO2-->", (bytes / 1024 ** 3 * KWH_NA_GB * G_NA_KWH).toFixed(2).replace(".", html.includes('<html lang="en"') ? "." : ","));
+      .replace("<!--CO2-->", ((g) => g < 0.01 ? g.toFixed(3) : g.toFixed(2))(bytes / 1024 ** 3 * KWH_NA_GB * G_NA_KWH).replace(".", html.includes('<html lang="en"') ? "." : ","));
     /* HTML sa prenáša komprimované; počíta sa dvakrát, aby čísla v päte boli zahrnuté */
     let out = odhad(html);
     bytes += zlib.gzipSync(out).length;

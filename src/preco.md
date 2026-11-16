@@ -16,10 +16,12 @@ Obrázky sú 1-bitové duotóny. Každý bod je buď farba, alebo papier, a odti
 
 Web je statický. Stránky vznikajú raz, pri zostavení, a server ich len posiela ďalej. Nie je tu databáza, sledovanie návštevníkov, cookies ani skript, ktorý by bežal v prehliadači. Aj rozbaľovanie životopisu robí samotné HTML. Claude Shannon v roku 1948 oddelil informáciu od významu. Tento web sa pokúša o opak: aby čo najviac prenesených bitov nieslo význam, nie réžiu.
 
+Písmo sa nesťahuje vôbec. Web používa Georgiu, pätkové písmo, ktoré navrhol Matthew Carter pre Microsoft v deväťdesiatych rokoch priamo pre obrazovky s nízkym rozlíšením. Je súčasťou systému na počítačoch Mac a Windows aj na iPhonoch a iPadoch, takže ho prehliadač len vyberie z disku. Android Georgiu nemá a namiesto nej ukáže Noto Serif, otvorené písmo od Googlu. Web preto nevyzerá všade úplne rovnako. Je to vedomá výmena: drobné rozdiely v tvare písmen za zhruba 220 kilobajtov menej pri každom zobrazení.
+
 Wendy Hui Kyong Chun v knihe Updating to Remain the Same opisuje nové médiá ako návyk, neustále aktualizácie, ktoré nás držia na mieste. Malý web je pokus z tohto návyku vystúpiť. Nemá feed ani upozornenia a Index je mapa tém, nie časová os.
 
 Benjamin Bratton v knihe The Stack opisuje výpočtovú techniku ako vrstvy, ktoré pretvárajú planétu, od energie a zeme až po rozhranie a používateľa. Malá stránka je malý zásah do všetkých vrstiev naraz. Patrí tak k línii, ktorú rozvíja aj Small File Media Festival Laury U. Marks: malé súbory nechápe len ako úsporu, ale ako estetiku.
 
-Váhu a uhlík počíta zostavenie webu pri každom zverejnení. Emisie vychádzajú z modelu Sustainable Web Design v4: asi 0,30 kWh na prenesený gigabajt a svetový priemer 494 g CO₂e na kWh. Je to odhad, nie meranie. Najväčšiu časť váhy dnes netvoria obrázky, ale písmo Newsreader, ktoré sa sťahuje na každej stránke. Aj to patrí k prípadovej štúdii: web ukazuje aj vlastné kompromisy.
+Váhu a uhlík počíta zostavenie webu pri každom zverejnení. Emisie vychádzajú z modelu Sustainable Web Design v4: asi 0,30 kWh na prenesený gigabajt a svetový priemer 494 g CO₂e na kWh. Je to odhad, nie meranie. Najväčšiu časť váhy dnes tvoria obrázky. Aj to patrí k prípadovej štúdii: web ukazuje aj vlastné kompromisy.
 
 Web navrhol a vyvinul ateliér Damian Works. Kód je verejný. Rovnako ako ostatná práca ateliéru nevzniká ako gesto jedného autora, ale ako postautorský proces, ktorého stopy sa dajú dohľadať.
