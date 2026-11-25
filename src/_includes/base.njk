@@ -30,22 +30,22 @@
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <a class="logo" href="{{ zaklad }}/">{{ site.meno }}</a>
-    <div class="jazyk caps" aria-label="{{ T.jazyk }}">
-      <a href="{{ page.url | prepnut('sk') }}" hreflang="sk" lang="sk" {% if lang == "sk" %}class="on" aria-current="true"{% endif %}>SK</a>
-      <span aria-hidden="true">/</span>
-      <a href="{{ page.url | prepnut('en') }}" hreflang="en" lang="en" {% if lang == "en" %}class="on" aria-current="true"{% endif %}>EN</a>
+  {% set jeText = perex and not domov %}<header class="hlava">
+    <div class="kraj vlavo">{% if jeText %}{{ title }}{% endif %}</div>
+    <div class="stred">
+      <a class="logo" href="{{ zaklad }}/">{{ site.meno }}</a>
+      <p class="jazyk" aria-label="{{ T.jazyk }}"><a href="{{ page.url | prepnut('sk') }}" hreflang="sk" lang="sk" {% if lang == "sk" %}class="on" aria-current="true"{% endif %}>SK</a>, <a href="{{ page.url | prepnut('en') }}" hreflang="en" lang="en" {% if lang == "en" %}class="on" aria-current="true"{% endif %}>EN</a></p>
+      {% include "nav.njk" %}
     </div>
+    <div class="kraj vpravo">{% if jeText and datum %}<time datetime="{{ datum }}">{{ datum | datum(lang) }}</time>{% endif %}</div>
   </header>
-  {% include "nav.njk" %}
   <main>
     {{ content | safe }}
   </main>
-  <footer class="mono">
+  <footer>
     <p>{{ T.vaha_1 }} <!--VAHA-->, {{ T.vaha_2 }} <!--CO2--> g CO₂e {{ T.cookies }}. <a href="{{ zaklad }}/preco/">{{ T.preco }}</a></p>
     <p>{{ T.kredit }} <a href="{{ zaklad }}/clanky/damian-works/">Damian Works</a></p>
-    <p class="kontakt">{% if site.instagram %}<a href="{{ site.instagram }}">{{ T.instagram }}</a>{% else %}<span>{{ T.instagram }}</span>{% endif %}<a href="mailto:{{ site.email }}">{{ T.email }}</a><a href="{{ zaklad }}/sukromie/">{{ T.sukromie }}</a></p>
+    <p class="kontakt">{% if site.instagram %}<a href="{{ site.instagram }}">{{ T.instagram }}</a>{% else %}<span>{{ T.instagram }}</span>{% endif %}, <a href="mailto:{{ site.email }}">{{ T.email }}</a>, <a href="{{ zaklad }}/sukromie/">{{ T.sukromie }}</a></p>
   </footer>
 </div>
 </body>

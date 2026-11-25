@@ -1,4 +1,4 @@
-# Pri každom pushi do vetvy main GitHub web zostaví a zverejní na GitHub Pages.
+# Pri každom pushi do vetvy main GitHub web zostaví, vyrobí PDF článkov a zverejní všetko na GitHub Pages.
 name: Zverejniť web
 
 on:
@@ -25,6 +25,19 @@ jobs:
           node-version: 22
       - run: npm install
       - run: npm run build
+      # PDF článkov: písmo Georgia (balík Microsoft core fonts) a WeasyPrint, ktorý z HTML sádza A4
+      - name: Písmo Georgia
+        run: |
+          echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections
+          sudo apt-get update
+          sudo apt-get install -y ttf-mscorefonts-installer libpango-1.0-0 libpangoft2-1.0-0
+          fc-list | grep -i georgia
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install weasyprint==70.0
+      - name: PDF článkov
+        run: python scripts/pdf.py
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

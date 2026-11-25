@@ -1,1 +1,5 @@
-{ "layout": "clanok.njk", "permalink": "/en/clanky/{{ page.fileSlug }}/" }
+{
+  "layout": "clanok.njk",
+  "permalink": "/en/clanky/{{ page.fileSlug }}/",
+  "jeClanok": true
+}

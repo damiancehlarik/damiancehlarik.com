@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import zlib from "node:zlib";
 import crypto from "node:crypto";
+import footnote from "markdown-it-footnote";
 const require_hash = (buf) => crypto.createHash("md5").update(buf).digest("hex").slice(0, 8);
 
 /* Model Sustainable Web Design v4: 0,30 kWh na GB (prevádzka 0,194 + výroba zariadení 0,106),
@@ -18,6 +19,10 @@ export default function (eleventyConfig) {
     eleventyConfig.addCollection("clanky_" + lang, (api) =>
       api.getFilteredByGlob(g).sort((a, b) => (a.data.poradie || 99) - (b.data.poradie || 99)));
   }
+
+  /* všetky články oboch jazykov, z nich sa robia PDF */
+  eleventyConfig.addCollection("clanky_vsetky", (api) =>
+    [...api.getFilteredByGlob(glob.sk), ...api.getFilteredByGlob(glob.en)]);
 
   /* adresa tej istej stránky v druhom jazyku */
   eleventyConfig.addFilter("prepnut", (url, ciel) => {
@@ -45,6 +50,47 @@ export default function (eleventyConfig) {
       out = out.replace(re, `$1<abbr data-plne="${v}" aria-label="${k}, ${v}" tabindex="0">$2</abbr>`);
     }
     return out;
+  });
+
+
+  /* poznámky pod čiarou v Markdowne: text[^1] a dole [^1]: citácia; čísla 01, 02 */
+  const dvojmiestne = (n) => String(n).padStart(2, "0");
+  eleventyConfig.amendLibrary("md", (md) => {
+    md.use(footnote);
+    md.renderer.rules.footnote_caption = (tokens, idx) => dvojmiestne(Number(tokens[idx].meta.id) + 1);
+    md.renderer.rules.footnote_block_open = () => '<section class="poznamky"><ol>\n';
+    md.renderer.rules.footnote_block_close = () => "</ol></section>\n";
+    md.renderer.rules.footnote_anchor = (tokens, idx, options, env, slf) => {
+      const id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
+      return ` <a href="#fnref${id}" class="spat" aria-label="späť">↑</a>`;
+    };
+  });
+
+  /* dátum z hlavičky článku (RRRR-MM-DD) po slovensky alebo anglicky */
+  const MESIACE_EN = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  eleventyConfig.addFilter("datum", (d, lang) => {
+    if (!d) return "";
+    const x = new Date(d);
+    if (isNaN(x)) return String(d);
+    return lang === "en" ? `${x.getUTCDate()} ${MESIACE_EN[x.getUTCMonth()]} ${x.getUTCFullYear()}`
+      : `${x.getUTCDate()}. ${x.getUTCMonth() + 1}. ${x.getUTCFullYear()}`;
+  });
+  eleventyConfig.addFilter("rok", (d) => (d ? new Date(d).getUTCFullYear() : ""));
+  eleventyConfig.addFilter("dvojmiestne", dvojmiestne);
+  eleventyConfig.addFilter("bezBodky", (t) => String(t || "").replace(/[.\s]+$/, ""));
+
+  /* PDF: poznámky sa presunú na miesto odkazu, aby ich WeasyPrint dal dole na tú istú stranu */
+  eleventyConfig.addFilter("poznamkyNaStranu", (html) => {
+    const texty = {};
+    const blok = html.match(/<section class="poznamky">[\s\S]*?<\/section>/);
+    if (blok) {
+      for (const [, id, obsah] of blok[0].matchAll(/<li id="fn(\d+)"[^>]*>([\s\S]*?)<\/li>/g)) {
+        texty[id] = obsah.replace(/<a href="#fnref[^"]*" class="spat"[^>]*>.*?<\/a>/g, "").replace(/<\/?p>/g, "").trim();
+      }
+      html = html.replace(blok[0], "");
+    }
+    return html.replace(/<sup class="footnote-ref"><a href="#fn(\d+)"[^>]*>[^<]*<\/a><\/sup>/g,
+      (m, id) => `<span class="poznamka">${texty[id] || ""}</span>`);
   });
 
   /* váha stránky a odhad emisií, vpísané do päty pri zostavení */

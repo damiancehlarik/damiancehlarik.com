@@ -1,0 +1,34 @@
+/* A4 verzia článku pre WeasyPrint: záhlavie vľavo názov, v strede podpis, vpravo strana; úzky stĺpec na stred,
+   poznámky dole na strane cez celú šírku. */
+@page {
+  size: A4;
+  margin: 22mm 12mm 18mm;
+  @top-left { content: string(titul); font: 8pt Georgia, "Noto Serif", "DejaVu Serif", serif; vertical-align: top; padding-top: 9mm; }
+  @top-center { content: "Damián Cehlárik"; font: 8pt Georgia, "Noto Serif", "DejaVu Serif", serif; vertical-align: top; padding-top: 9mm; }
+  @top-right { font: 8pt Georgia, "Noto Serif", "DejaVu Serif", serif; vertical-align: top; padding-top: 9mm; }
+  @footnote { border-top: .5pt solid #111; padding-top: 2mm; }
+}
+html { font: 10pt/13.5pt Georgia, "Noto Serif", "DejaVu Serif", serif; color: #111; }
+body { margin: 0; }
+h1 { string-set: titul content(); font-weight: 400; font-size: 22pt; line-height: 26pt; margin: 0; }
+.titulny { text-align: center; margin: 8mm auto 0; max-width: 150mm; }
+.kategoria, .podujatie { font-style: italic; margin: 0; }
+.kategoria { margin-bottom: 2mm; }
+.podtitul { font-size: 22pt; line-height: 26pt; margin: 0; }
+.podujatie { margin-top: 3mm; }
+.doi { font-size: 8pt; color: #777; margin: 1mm 0 0; }
+.obrazok { width: 80mm; margin: 9mm auto 0; }
+.obrazok img { width: 100%; image-rendering: pixelated; }
+.obrazok figcaption { font-size: 8pt; line-height: 10pt; text-align: center; margin-top: 2mm; }
+.stlpec { width: 113mm; margin: 9mm auto 0; text-align: justify; hyphens: auto; }
+.stlpec p { margin: 0; text-indent: 1.4em; orphans: 2; widows: 2; }
+.stlpec > p:first-child, .stlpec h2 + p, .stlpec blockquote + p { text-indent: 0; }
+.stlpec h2 { font-weight: 400; font-size: 10pt; text-transform: uppercase; text-align: center; margin: 7mm 0 3mm; break-after: avoid; }
+.stlpec blockquote { margin: 0 0 4mm 10mm; text-align: left; }
+.stlpec a { color: inherit; text-decoration: none; }
+.stlpec img { max-width: 100%; }
+.poznamka { float: footnote; font-size: 7.5pt; line-height: 9.5pt; text-align: left; hyphens: manual; }
+::footnote-call { content: counter(footnote, decimal-leading-zero); font-size: 6pt; vertical-align: super; line-height: 0; }
+::footnote-marker { content: counter(footnote, decimal-leading-zero); display: inline-block; width: 9mm; }
+abbr { text-decoration: none; }
+.tiraz { width: 113mm; margin: 10mm auto 0; font-size: 7.5pt; color: #777; text-align: center; }

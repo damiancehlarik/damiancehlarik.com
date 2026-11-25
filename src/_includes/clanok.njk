@@ -1,12 +1,26 @@
 ---
 layout: base.njk
 ---
-{% set T = i18n[lang] %}<article class="clanok">
+{% set T = i18n[lang] %}{% set adresa = site.url + page.url %}{% set odkaz = ("https://doi.org/" + doi) if doi else adresa %}<article class="clanok">
+  <p class="kategoria"><em>{{ tema | replace(" / ", ", ") }}</em></p>
   <h1>{{ title }}</h1>
-  <div class="podtitul caps">{{ tema }}</div>
-  <p class="perex">{{ perex }}</p>
+  <p class="anotacia">{{ perex }}</p>
   {% if obrazok %}<figure class="hlavny"><img src="{{ obrazok }}" alt="" width="626" height="380"><figcaption>{{ popis or T.zastupny }}</figcaption></figure>{% endif %}
   <div class="telo">
     {{ content | safe }}
   </div>
+  {% if jeClanok %}<div class="akcie">
+    <a class="tlacidlo" href="/pdf/{{ lang }}-{{ page.fileSlug }}.pdf" download>{{ T.pdf }}</a>
+    <a class="tlacidlo cit" href="#citovat">{{ T.citovat }}</a>
+  </div>
+  {% if doi %}<p class="doi">DOI <a href="https://doi.org/{{ doi }}">{{ doi }}</a>, {{ T.doi_zenodo }}</p>{% endif %}
+  <section class="citacie" id="citovat" aria-label="{{ T.citacia }}">
+    <p class="ct">{{ T.citacia }}<br>{{ title }}: {{ perex | bezBodky }}, <em>{{ site.meno }}</em></p>
+    <dl>
+      {% if lang == "sk" %}<dt>STN ISO 690</dt><dd>CEHLÁRIK, Damián. {{ title }}. In: <i>damiancehlarik.com</i> [online]. {{ datum | datum(lang) if datum else "[b. d.]" }} [cit. {{ T.citovat_datum }}]. {% if doi %}DOI {{ doi }}{% else %}Dostupné na: {{ adresa }}{% endif %}</dd>{% endif %}
+      <dt>Chicago</dt><dd>Cehlárik, Damián. {% if lang == "sk" %}„{{ title }}.“{% else %}“{{ title }}.”{% endif %} <i>damiancehlarik.com</i>{% if datum %}, {{ datum | datum(lang) }}{% endif %}. {{ odkaz }}.</dd>
+      <dt>APA</dt><dd>Cehlárik, D. ({{ datum | rok if datum else "n.d." }}). <i>{{ title }}</i>. damiancehlarik.com. {{ odkaz }}</dd>
+    </dl>
+    <p class="rada">{{ T.kopirovat_rada }} <a href="#">{{ T.zavriet }}</a></p>
+  </section>{% endif %}
 </article>

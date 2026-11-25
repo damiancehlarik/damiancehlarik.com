@@ -1,10 +1,6 @@
-{% set T = i18n[lang] %}{% if zoznam | length %}<ul class="mriezka">
-{% for p in zoznam %}
-  <li class="karta"><a href="{{ p.url }}">
-    {% if p.data.obrazok %}<img src="{{ p.data.obrazok }}" alt="" width="626" height="380" loading="lazy">{% endif %}
-    <div class="tema caps">{{ p.data.tema }}</div>
-    <h2>{{ p.data.title }}</h2>
-    <p>{{ p.data.perex }}</p>
-  </a></li>
-{% endfor %}
-</ul>{% else %}<p class="prazdne">{{ T.prazdne }}</p>{% endif %}
+{% set T = i18n[lang] %}{% if zoznam | length %}<table class="index">
+  <thead><tr><th class="c">{{ T.c }}</th><th>{{ T.titul }}</th><th class="an">{{ T.anotacia }}</th><th class="kat">{{ T.kategoria }}</th></tr></thead>
+  <tbody>
+{% for p in zoznam | reverse %}    <tr><td class="c">{{ (p.data.poradie or loop.revindex) | dvojmiestne }}</td><td class="t"><a href="{{ p.url }}">{{ p.data.title }}</a></td><td class="an">{{ p.data.perex }}</td><td class="kat"><em>{{ p.data.tema | replace(" / ", ", ") }}</em></td></tr>
+{% endfor %}  </tbody>
+</table>{% else %}<p class="prazdne">{{ T.prazdne }}</p>{% endif %}

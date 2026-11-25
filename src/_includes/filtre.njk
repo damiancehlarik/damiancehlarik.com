@@ -1,5 +1,1 @@
-{% set vsetky = collections["clanky_" + lang] %}<div class="filtre caps">
-  {% for os in ["sily", "rezimy"] %}<div class="os">
-    {% for f in filtre %}{% if f.os == os %}{% set n = vsetky | sFiltrom(f.key) | length %}{% if n %}<a href="{{ zaklad }}/tema/{{ f.key }}/" {% if aktivny == f.key %}class="on" aria-current="page"{% endif %}>{{ f[lang] }}</a>{% else %}<span>{{ f[lang] }}</span>{% endif %}{% endif %}{% endfor %}
-  </div>{% endfor %}
-</div>
+{% set T = i18n[lang] %}{% set vsetky = collections["clanky_" + lang] %}<p class="filtre"><a href="{{ zaklad }}/" {% if not aktivny %}class="on" aria-current="page"{% endif %}>{{ T.vsetko }}</a>{% for f in filtre %}, {% set n = vsetky | sFiltrom(f.key) | length %}{% if n %}<a href="{{ zaklad }}/tema/{{ f.key }}/" {% if aktivny == f.key %}class="on" aria-current="page"{% endif %}>{{ f[lang] }}</a>{% else %}<span>{{ f[lang] }}</span>{% endif %}{% endfor %}</p>

@@ -1,5 +1,3 @@
-{% set T = i18n[lang] %}<nav class="caps">
-  <a href="{{ zaklad }}/" {% if page.url == zaklad + "/" %}class="on"{% endif %}>{{ T.index }}</a>
-  <a href="{{ zaklad }}/clanky/damian-works/" {% if page.url == zaklad + "/clanky/damian-works/" %}class="on"{% endif %}>{{ T.atelier }}</a>
-  <a href="{{ zaklad }}/info/" {% if page.url == zaklad + "/info/" %}class="on"{% endif %}>{{ T.info }}</a>
+{% set T = i18n[lang] %}<nav aria-label="Menu">
+  <a href="{{ zaklad }}/" {% if domov and not aktivny %}class="on" aria-current="page"{% endif %}>{{ T.index }}</a>, <a href="{{ zaklad }}/clanky/damian-works/" {% if page.url == zaklad + "/clanky/damian-works/" %}class="on" aria-current="page"{% endif %}>{{ T.atelier }}</a>, <a href="{{ zaklad }}/info/" {% if page.url == zaklad + "/info/" %}class="on" aria-current="page"{% endif %}>{{ T.info }}</a>
 </nav>
